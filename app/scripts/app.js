@@ -47,6 +47,16 @@ angular
         templateUrl:'views/user-list.html',
         controller:'UserListCtrl'
       })
+      .state('account', {
+        url:'/account',
+        templateUrl:'views/account.html',
+        controller:'AccountCtrl'
+      })
+      .state('johoi', {
+        url:'/johoi',
+        templateUrl:'views/johoi.html',
+        controller:'JohoiListCtrl'
+      })
       .state('user-withdraw', {
         url:'/user-withdraw',
         templateUrl:'views/user-withdraw.html',

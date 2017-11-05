@@ -1,21 +1,22 @@
 <div class="jumbotron">
-  <h1>User List</h1>
+  <h1>가상계좌 발급조회</h1>
 </div>
 <div class="row">
   <div class="col-sm-12">
   <table class="table">
-    <thead><tr><th>id</th><th>Scourt_id</th><th>User_id</th><th>Name</th><th>Password</th><th>Delete</th></tr></thead>
+    <thead><tr><th>id</th><th>Bub_cd</th><th>Bank_cd</th><th>Account_no</th><th>Name</th><th>Amt</th><th>Kubun</th></tr></thead>
     <tbody>
       <tr ng-repeat="obj in userList">
         <td><a href="detail:{{obj.id}}&{{obj.name}}&{{obj.age}}"><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" ng-click="getUserInfo(obj.id)">{{obj.id}}</button></a></td>
-        <td><input type="text" class="form-control" ng-model="obj.scourt_id"></td>
-        <td><input type="text" class="form-control" ng-model="obj.user_id"></td>
+        <td><input type="text" class="form-control" ng-model="obj.bub_cd"></td>      
+        <td><input type="text" class="form-control" ng-model="obj.bank_cd"></td>
+        <td><input type="text" class="form-control" ng-model="obj.account"></td>
         <td><input type="text" class="form-control" ng-model="obj.name"></td>
-        <td><input type="text" class="form-control" ng-model="obj.password"></td>
-
+        <td><input type="text" class="form-control" ng-model="obj.amt"></td>
+        <td><input type="text" class="form-control" ng-model="obj.kubun"></td>
         
         <td><button type="button" class="btn btn-warning"
-         ng-click="modifyUserInfo(obj.id, obj.scourt_id, obj.user_id, obj.name, obj.password)">Edit></button></td>
+         ng-click="modifyUserInfo(obj.id, obj.bub_cd, obj.name, obj.amt, obj.kubun)">Edit></button></td>
         <td><button type="button" class="btn btn-danger btn-sm" 
           ng-click="deleteUserInfo(obj.id)">Danger</button></td>
       </tr>
@@ -30,15 +31,18 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">User Info</h4>
+        <h4 class="modal-title">Account Info</h4>
       </div>
 
       <div class="modal-body">
        <table class="table"><tr><td>id</td><td>{{userInfo.id}}</td></tr>
-       <tr><td>Scourt_id</td><td>{{userInfo.scourt_id}}</td></tr>
-       <tr><td>User_id</td><td>{{userInfo.user_id}}</td></tr>
+       <tr><td>Bub_cd</td><td>{{userInfo.bub_cd}}</td></tr>       
+       <tr><td>Bank_cd</td><td>{{userInfo.bank_cd}}</td></tr>
+       <tr><td>Account_no</td><td>{{userInfo.account}}</td></tr>
        <td>Name</td><td>{{userInfo.name}}</td></tr>
-       <tr><td>Password</td><td>{{userInfo.password}}</td></tr>
+       <tr><td>Amt</td><td>{{userInfo.amt}}</td></tr>
+       <tr><td>Kubun</td><td>{{userInfo.kubun}}</td></tr>
+       <tr><td>QR_CODE</td><td><img src="images/qrcode.jpg"></td></tr>
        </table>
        
       <div class="modal-footer">
