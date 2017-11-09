@@ -8,7 +8,7 @@
  * Controller of the angularJsexamApp
  */
 angular.module('angularJsexamApp')
-  .controller('JohoiListCtrl', [ 
+  .controller('SunapListCtrl', [ 
     "Data", "$scope", "$state", function (Data, $scope, $state) {
     this.awesomeThings = [
       'HTML5 Boilerplate',

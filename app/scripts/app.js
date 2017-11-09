@@ -57,6 +57,11 @@ angular
         templateUrl:'views/johoi.html',
         controller:'JohoiListCtrl'
       })
+      .state('sunap', {
+        url:'/sunap',
+        templateUrl:'views/sunap.html',
+        controller:'SunapListCtrl'
+      })
       .state('user-withdraw', {
         url:'/user-withdraw',
         templateUrl:'views/user-withdraw.html',

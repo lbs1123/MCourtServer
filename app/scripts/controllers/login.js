@@ -17,33 +17,26 @@ angular.module('angularJsexamApp')
       'Karma'
     ];
 
-    console.log(" !!!! login start !!!");
-
     if (sessionInfo.isUserSignedIn()) {
-      console.log("AAAAAAAAAA");
     	$state.go('account');
     } else {
     	$state.go('main');
     }
     $scope.submitLogin = function() {
-      console.log("BBBBBBBB");
     	sessionService.login($scope.login, function(res) {
     		$state.go('account');
     	});
     }
     $scope.isUserSignedIn = function() {
-      console.log("CCCCCCCC");
-    	return sessionInfo.isUserSignedIn();
+     	return sessionInfo.isUserSignedIn();
     }
     $scope.getUserId = function() {
-      console.log("DDDDDDDD");
     	if (sessionInfo.isUserSignedIn())
     		return sessionInfo.getCurrentUser().data.user_id;
     	else return '';
     }
     $scope.logout = function() {
-      console.log("EEEEEEE");
-    	sessionInfo.reset();
+     	sessionInfo.reset();
     	$state.go('login');
     }
   }]);

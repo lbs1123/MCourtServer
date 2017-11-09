@@ -4,7 +4,7 @@
 <div class="row">
   <div class="col-sm-12">
   <table class="table">
-    <thead><tr><th>id</th><th>Scourt_id</th><th>User_id</th><th>Name</th><th>Password</th><th>Delete</th></tr></thead>
+    <thead><tr><th>id</th><th>전자소송ID</th><th>회원ID</th><th>성  명</th><th>비밀번호</th><th>수정</th><th>삭제</th></tr></thead>
     <tbody>
       <tr ng-repeat="obj in userList">
         <td><a href="detail:{{obj.id}}&{{obj.name}}&{{obj.age}}"><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" ng-click="getUserInfo(obj.id)">{{obj.id}}</button></a></td>

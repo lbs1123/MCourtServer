@@ -22,16 +22,17 @@ angular.module('angularJsexamApp')
     $scope.name    = "";
     $scope.amt     = "";
     $scope.kubun   = "";
-    $scope.modifyUserInfo = function(bank_cd, bub_cd, name, amt, kubun) {
+    $scope.modifyUserInfo = function(bank_cd, bub_cd, name, amt, kubun, issue_date) {
       var dataPromise = Data.modifyData(
-        'http://192.168.35.175:52273/account/'+bank_cd, '&bub_cd='+$scope.bub_cd+
+        'http://192.168.35.31:52273/account/'+bank_cd, '&bub_cd='+$scope.bub_cd+
                                                         '&name='+$scope.name+
                                                         '&amt='+$scope.amt+
-                                                        '&kubun='+$scope.kubun);
+                                                        '&kubun='+$scope.kubun+
+                                                        '&issue_date='+$scope.issue_date);
     dataPromise.then(function(results) {
         $scope.requestUserList();
       }, function(reason){},function(update){});
-         window.alert('가상계좌발급 성공');
+            window.alert('가상계좌발급 성공');
     }
 
 
