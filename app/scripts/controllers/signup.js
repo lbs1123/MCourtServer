@@ -24,7 +24,7 @@ angular.module('angularJsexamApp')
 
     $scope.saveUserInfo = function() {
     	var dataPromise = Data.setData(
-    		'http://192.168.35.31:52273/user', '&scourt_id='+$scope.scourt_id+
+    		'http://172.16.2.1:52273/user', '&scourt_id='+$scope.scourt_id+
                                             '&user_id='+$scope.user_id+
                                             '&name='+$scope.name+
                                             '&password='+$scope.password);

@@ -18,13 +18,13 @@ angular.module('angularJsexamApp')
     ];
 
     if (sessionInfo.isUserSignedIn()) {
-    	$state.go('account');
-    } else {
     	$state.go('main');
+    } else {
+    	$state.go('login');
     }
     $scope.submitLogin = function() {
     	sessionService.login($scope.login, function(res) {
-    		$state.go('account');
+    		$state.go('signup');
     	});
     }
     $scope.isUserSignedIn = function() {

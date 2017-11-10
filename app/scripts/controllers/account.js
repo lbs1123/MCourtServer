@@ -22,9 +22,10 @@ angular.module('angularJsexamApp')
     $scope.name    = "";
     $scope.amt     = "";
     $scope.kubun   = "";
+    $scope.issue_date = "";
     $scope.modifyUserInfo = function(bank_cd, bub_cd, name, amt, kubun, issue_date) {
       var dataPromise = Data.modifyData(
-        'http://192.168.35.31:52273/account/'+bank_cd, '&bub_cd='+$scope.bub_cd+
+        'http://172.16.2.1:52273/account/'+bank_cd, '&bub_cd='+$scope.bub_cd+
                                                         '&name='+$scope.name+
                                                         '&amt='+$scope.amt+
                                                         '&kubun='+$scope.kubun+

@@ -10,29 +10,19 @@
         <td><a href="detail:{{obj.id}}">
           <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" ng-click="getUserInfo(obj.id)">{{obj.id}}</button></a></td>
 
-         <td><input type="text" class="form-control" ng-model="obj.bub_cd"></td>
-<!--
-         <td><button type="button" class="btn btn-info btn-lg" ng-show="obj.bank_cd == 011">
-             <a href="https://www.nonghyup.com/"></a></button></td>
-         <td><button type="button" class="btn btn-info btn-lg" ng-show="obj.bank_cd == 088">
-             <a href="https://www.shinhan.com/"></a></button></td>
-
-         <td><button type="button" class="btn btn-info btn-lg" ng-show="obj.bank_cd == 020">
-             <a href="https://www.wooribank.com/"></a></button></td>
--->
-
+        <td><input type="text" class="form-control" ng-model="obj.bub_cd"></td>
         <td><input type="text" class="form-control" ng-model="obj.bank_cd"></td>
         <td><input type="text" class="form-control" ng-model="obj.account"></td>
         <td><input type="text" class="form-control" ng-model="obj.name"></td>
         <td><input type="text" class="form-control" ng-model="obj.amt"></td>
         <td><input type="text" class="form-control" ng-model="obj.kubun"></td>
-        <td><input type="text" class="form-control" ng-model="obj.sunap_date"></td>
+        <td><input type="text" class="form-control" ng-model="obj.real_date"></td>
         <td><input type="text" class="form-control" ng-model="obj.napbu_no"></td>
-        
+
         <td><button type="button" class="btn btn-warning"
-         ng-click="modifyUserInfo(obj.id, obj.bub_cd, obj.name, obj.amt, obj.kubun)">Edit></button></td>
+         ng-click="modifyUserInfo(obj.id, obj.bub_cd, obj.name, obj.amt, obj.kubun)">수정</button></td>
         <td><button type="button" class="btn btn-danger btn-sm" 
-          ng-click="deleteUserInfo(obj.id)">Danger</button></td>
+          ng-click="deleteUserInfo(obj.id)">삭제</button></td>
       </tr>
     </tbody>
   </table>
