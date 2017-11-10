@@ -4,36 +4,96 @@
 <div class="row">
   <div class="col-sm-6">
     <div class="form-group">
+       <div class="input-group">
+      <!--
       <label for="bub_cd">법원코드:</label>
+    -->
+      <span class="input-group-addon">
+            <i class="fa fa-asterisk"></i>
+      </span> 
        <select ng-model="bub_cd" id="bub_cd_cd">
-               <option value="">법원선택</option>
-               <option value="000100">대법원</option>
-               <option value="000200">고등법원</option>
-               <option value="000210">중앙법원</option>
-               <option value="000221">서울회생법원</option>
-               <option value="000300">대구법원</option>
-               <option value="000410">광주법원</option>
-               <option value="000510">부산법원</option>              
+               <option value="000100">(000100) 대법원</option>
+               <option value="000200">(000200) 고등법원</option>
+               <option value="000210">(000210) 중앙법원</option>
+               <option value="000221">(000221) 서울회생법원</option>
+               <option value="000300">(000300) 대구법원</option>
+               <option value="000410">(000410) 광주법원</option>
+               <option value="000510">(000510) 부산법원</option> 
+               <!--             
                <input type="text" class="form-control" ng-model="bub_cd" id="bub_cd">
+             -->
+               <input id="bub_cd" type="text" name="법원선택" class="form-control input-lg" placeholder="법원선택" ng-model="bub_cd" required>
        </select>
-    </div>
+     </div>
+   </div>
+
     <div class="form-group">
+      <div class="input-group">
+      <!--
       <label for="user_bankcd">은행명:</label>
-       <select ng-model="bank_cd" id="bank_cd">
-               <option value="">은행선택</option>
-               <option value="088">신한은행</option>
-               <option value="011">NH농협</option>
-               <option value="020">우리은행</option>
-               <option value="023">SC은행</option>
-               <option value="031">대구은행</option>
-               <option value="032">부산은행</option>              
-               <option value="034">광주은행</option>
-               <option value="037">전북은행</option>   
-               <option value="039">경남은행</option>                
-               <option value="081">KEB하나은행</option>
+             -->
+      <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-asterisk"></i>
+          </span> 
+          <select ng-model="bank_cd" id="bank_cd">
+               <option value="088">(088) 신한은행 </option>
+               <option value="011">(011) NH농협   </option>
+               <option value="020">(020) 우리은행  </option>
+               <option value="023">(023) SC은행    </option>
+               <option value="031">(031) 대구은행   </option>
+               <option value="032">(032) 부산은행   </option>              
+               <option value="034">(034) 광주은행   </option>
+               <option value="037">(037) 전북은행   </option>   
+               <option value="039">(039) 경남은행   </option>                
+               <option value="081">(081) KEB하나은행</option>
+               <!--
                <input type="text" class="form-control" ng-model="bank_cd" id="bank_cd">
-       </select>      
+             -->
+             <input id="bank_cd" type="text" name="은행선택" class="form-control input-lg" placeholder="은행선택" ng-model="bank_cd" required>
+          </select>
+       </div> 
+      </div>    
     </div>
+
+   <div class="form-group">
+     <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-asterisk"></i>
+          </span>
+
+          <select ng-model="kubun" id="kubun">
+               <option value="송달료">송달료</option>
+               <option value="소송등인지">소송등인지</option>
+          <input id="kubun" type="text" name="종류" class="form-control input-lg" placeholder="종류선택" ng-model="kubun" required>
+<!--
+      <label for="user_kubun">종  류:</label>
+      <select ng-model="kubun" id="kubun">
+      <input type="text" class="form-control" ng-model="kubun" id="user_kubun"> 
+ -->
+      </select> 
+    </div>
+  </div>
+
+   <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-asterisk"></i>
+          </span>
+          <input id="amt" type="text" name="금액" class="form-control input-lg" placeholder="금       액" ng-model="amt" required>
+        </div>
+    </div>
+
+  <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-asterisk"></i>
+          </span>
+          <input id="name" type="text" name="납부자명" class="form-control input-lg" placeholder="납부자명" ng-model="name" required>
+        </div>
+    </div>
+
+<!--
     <div class="form-group">
       <label for="user_amt">금  액:</label>
       <input type="text" class="form-control" ng-model="amt" id="user_amt">
@@ -42,18 +102,12 @@
       <label for="user_amt">납부자명:</label>
       <input type="text" class="form-control" ng-model="name" id="user_name">
     </div>
-    <div class="form-group">
-      <label for="user_kubun">종  류:</label>
-      <select ng-model="kubun" id="kubun">
-               <option value="">종류선택</option>
-               <option value="송달료">송달료</option>
-               <option value="소송등인지">소송등인지</option>      
-      <input type="text" class="form-control" ng-model="kubun" id="user_kubun">
-      </select> 
-    </div>
-  </div>
+-->
+
+
+ 
   <div class="col-sm-6">
-    <button type="button" class="btn btn-primary" ng-click="modifyUserInfo(bank_cd)">가상계좌발급</button>
+    <button type="button" class="btn btn-primary btn-lg btn-block btn-shadow" ng-click="modifyUserInfo(bank_cd)">가상계좌발급</button>
   </div>
 </div>
 

@@ -1,8 +1,9 @@
 <div class="jumbotron">
-  <h1>Signup</h1>
+  <h1>회원가입</h1>
 </div>
 <div class="row">
   <div class="col-sm-6">
+    <!--
     <div class="form-group">
       <label for="user_scourt">전자소송_ID:</label>
       <input type="text" class="form-control" ng-model="scourt_id" id="user_scourt">
@@ -23,4 +24,44 @@
   <div class="col-sm-6">
     <button type="button" class="btn btn-primary" ng-click="saveUserInfo()">회원 가입</button>
   </div>
+  -->
+
+    <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-envelope-o"></i>
+          </span>
+          <input id="user_scourt" type="text" name="전자소송_id" class="form-control input-lg" placeholder="전자소송ID" ng-model="scourt_id" required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-envelope-o"></i>
+          </span>
+          <input id="user_id" type="text" name="회원_id" class="form-control input-lg" placeholder="회원ID" ng-model="user_id" required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-envelope-o"></i>
+          </span>
+          <input id="name" type="text" name="성  명" class="form-control input-lg" placeholder="성  명" ng-model="name" required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-envelope-o"></i>
+          </span>
+          <input id="password" type="password" name="비밀번호" class="form-control input-lg" placeholder="비밀번호" ng-model="password" required>
+        </div>
+    </div>
+ 
+    <button type="submit" class="btn btn-primary btn-lg btn-block btn-shadow" ng-click="saveUserInfo()">회원가입</button>
+  
 </div>

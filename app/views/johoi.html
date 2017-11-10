@@ -11,13 +11,7 @@
           <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" ng-click="getUserInfo(obj.id)">{{obj.id}}</button></a></td>
 
         <td><input type="text" class="form-control" ng-model="obj.bub_cd"></td>
-        <td>
-<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" ng-click="getUserInfo(obj.id)">{{obj.bank_cd}} </button></td>
-
-        <button type="button" class="btn btn-info btn-lg" ng-show="obj.bank_cd == 088"><a href="..."></a></button>
-
-
-
+        <td><input type="text" class="form-control" ng-model="obj.bank_cd"></td>
         <td><input type="text" class="form-control" ng-model="obj.account"></td>
         <td><input type="text" class="form-control" ng-model="obj.name"></td>
         <td><input type="text" class="form-control" ng-model="obj.amt"></td>
@@ -46,13 +40,51 @@
 
       <div class="modal-body">
        <table class="table"><tr><td>id</td><td>{{userInfo.id}}</td></tr>
-       <tr><td>법원코드</td><td>{{userInfo.bub_cd}}</td></tr>       
+       <tr><td>법원코드</td><td>{{userInfo.bub_cd}}</td></tr>   
+<!--    
        <tr><td>은행코드</td><td>{{userInfo.bank_cd}}</td></tr>
+-->
+       <tr><td>은행코드</td><td>
+        <div ng-show="userInfo.bank_cd == '088'">
+          <a href="http://www.shinhan.com/" target="_blank" onclick="return popupwindow(this.href, 600, 800)">신한은행 인터넷뱅킹 바로가기</a></div>
+          <div ng-show="userInfo.bank_cd == '011'">
+          <a href="https://banking.nonghyup.com" target="_blank" onclick="return popupwindow(this.href, 600, 800)">NH농협 인터넷뱅킹 바로가기</a></div>
+          <div ng-show="userInfo.bank_cd == '020'">
+          <a href="http://www.wooribank.com/" target="_blank" onclick="return popupwindow(this.href, 600, 800)">우리은행 인터넷뱅킹 바로가기</a>
+          </div>
+          <div ng-show="userInfo.bank_cd == '023'">
+          <a href="https://www.standardchartered.co.kr/" target="_blank" onclick="return popupwindow(this.href, 600, 800)">SC은행 인터넷뱅킹 바로가기</a></div>
+          <div ng-show="userInfo.bank_cd == '031'">
+          <a href="https:https://www.dgb.co.kr/" target="_blank" onclick="return popupwindow(this.href, 600, 800)">대구은행 인터넷뱅킹 바로가기</a></div>
+          <div ng-show="userInfo.bank_cd == '032'">
+          <a href="https://www.busanbank.co.kr" target="_blank" onclick="return popupwindow(this.href, 600, 800)">부산은행 인터넷뱅킹 바로가기</a></div>
+          <div ng-show="userInfo.bank_cd == '034'">
+          <a href="https://www.busanbank.co.kr" target="_blank" onclick="return popupwindow(this.href, 600, 800)">광주은행 인터넷뱅킹 바로가기</a></div>
+          <div ng-show="userInfo.bank_cd == '037'">
+          <a href="https://www.jbbank.co.kr/" target="_blank" onclick="return popupwindow(this.href, 600, 800)">전북은행 인터넷뱅킹 바로가기</a></div>
+          <div ng-show="userInfo.bank_cd == '039'">
+          <a href="https://www.knbank.co.kr/" target="_blank" onclick="return popupwindow(this.href, 600, 800)">경남은행 인터넷뱅킹 바로가기</a></div>
+          <div ng-show="userInfo.bank_cd == '081'">
+          <a href="https://www.kebhana.com/" target="_blank" onclick="return popupwindow(this.href, 600, 800)">KEB하나은행 인터넷뱅킹 바로가기</a></div>
+          <div ng-show="userInfo.bank_cd == NULL">
+          <a href="http://www.naver.com/" target="_blank" onclick="return popupwindow(this.href, 600, 800)">은행검색</a>
+          </div>
+       </td></tr>
+
        <tr><td>계좌번호</td><td>{{userInfo.account}}</td></tr>
-       <td>납부자명</td><td>{{userInfo.name}}</td></tr>
+       <tr><td>납부자명</td><td>{{userInfo.name}}</td></tr>
        <tr><td>금 액</td><td>{{userInfo.amt}}</td></tr>
        <tr><td>납부종류</td><td>{{userInfo.kubun}}</td></tr>
        <tr><td>발급일자</td><td>{{userInfo.issue_date}}</td></tr>
+<!--
+       <tr><td>
+        <ng-show="obj_bank_cd == 088">
+        <a href="http://www.shinhan.com/" target="_blank" onclick="return popupwindow(this.href, 600, 800)">신한은행</a>
+        <ng-show="obj_bank_cd == 020">
+        <a href="http://www.wooribank.com/" target="_blank" onclick="return popupwindow(this.href, 600, 800)">우리은행</a>
+      </td></tr>
+-->
+
        </table>
        
       <div class="modal-footer">
