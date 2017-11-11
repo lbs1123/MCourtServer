@@ -4,27 +4,39 @@
 <div class="row">
   <div class="col-sm-12">
   <table class="table">
-    <thead><tr><th>id</th><th>법원코드</th><th>은행코드</th><th>계좌번호</th><th>납부자명</th><th>금 액</th><th>납부종류</th><th>수납일자</th><th>수납번호</th></tr></thead>
+    <thead><tr><th>id</th>
+     <!-- 화면축소
+      <th>법원코드</th><th>은행코드</th><th>계좌번호</th>
+  -->
+    <th>납부자명</th><th>금 액</th><th>납부종류</th>
+    <!--
+    <th>수납일자</th><th>수납번호</th>
+  -->
+
+    </tr></thead>
     <tbody>
       <tr ng-repeat="obj in userList">
         <td><a href="detail:{{obj.id}}">
           <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" 
           ng-click="getUserInfo(obj.id)">{{obj.id}}</button></a></td>
-
+        <!-- 화면축소
         <td><input type="text" class="form-control" ng-model="obj.bub_cd"></td>
+
         <td><input type="text" class="form-control" ng-model="obj.bank_cd"></td>
         <td><input type="text" class="form-control" ng-model="obj.account"></td>
+      -->
         <td><input type="text" class="form-control" ng-model="obj.name"></td>
         <td><input type="text" class="form-control" ng-model="obj.amt"></td>
         <td><input type="text" class="form-control" ng-model="obj.kubun"></td>
+<!-- 화면축소
         <td><input type="text" class="form-control" ng-model="obj.real_date"></td>
         <td><input type="text" class="form-control" ng-model="obj.napbu_no"></td>
-
 
          <td><button type="button" class="btn btn-warning"
          ng-click="modifyUserInfo(obj.id, obj.bub_cd, obj.name, obj.amt, obj.kubun)">수정</button></td>
         <td><button type="button" class="btn btn-danger btn-sm" 
           ng-click="deleteUserInfo(obj.id)">삭제</button></td>
+-->
       </tr>
     </tbody>
   </table>
@@ -42,7 +54,7 @@
 
       <div class="modal-body">
        <table class="table"><tr><td>id</td><td>{{userInfo.id}}</td></tr>
-       <tr><td>법원코드</td><td>{{userInfo.bub_cd}}</td></tr>       
+       <tr><td>법원코드</td><td>{{userInfo.bub_cd}}</td></tr>
        <tr><td>은행코드</td><td>{{userInfo.bank_cd}}</td></tr>
        <tr><td>계좌번호</td><td>{{userInfo.account}}</td></tr>
        <tr><td>납부자명</td><td>{{userInfo.name}}</td></tr>
@@ -50,7 +62,11 @@
        <tr><td>납부종류</td><td>{{userInfo.kubun}}</td></tr>
        <tr><td>수납일자</td><td>{{userInfo.sunap_date}}</td></tr>
        <tr><td>납부번호</td><td>{{userInfo.napbu_no}}</td></tr>
-       <tr><td>QR_CODE</td><td><img src="images/qrcode.jpg"></td></tr>
+       <tr><td>QR_CODE</td><td>
+       <tr><td><div ng-show="userInfo.kubun == '송달료'">
+             <a  href="images/송달료.jpg" target="_blank" onclick="return popupwindow(this.href, 600, 800)"><img src="images/qrcode.jpg"></a></div>
+             <div ng-show="userInfo.kubun == '소송등인지'">
+             <a  href="images/인지대.jpg" target="_blank" onclick="return popupwindow(this.href, 600, 800)"><img src="images/qrcode.jpg"></a></div></td></tr>
        </table>
        
       <div class="modal-footer">

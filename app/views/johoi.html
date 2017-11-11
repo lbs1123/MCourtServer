@@ -4,25 +4,44 @@
 <div class="row">
   <div class="col-sm-12">
   <table class="table">
-    <thead><tr><th>id</th><th>법원코드</th><th>은행코드</th><th>계좌번호</th><th>납부자명</th><th>금 액</th><th>납부종류</th><th>발급일자</th></tr></thead>
+    <thead><tr><th>id</th>
+      <!-- 화면축소
+      <th>법원코드</th>
+    -->
+
+     <th>은행코드</th>
+   <!--  
+     <th>계좌번호</th>
+    -->
+      <th>납부자명</th><th>금 액</th><th>납부종류</th>
+<!--
+      <th>발급일자</th>
+    -->
+  </tr></thead>
     <tbody>
       <tr ng-repeat="obj in userList">
         <td><a href="detail:{{obj.id}}">
           <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" ng-click="getUserInfo(obj.id)">{{obj.id}}</button></a></td>
-
+        <!--
         <td><input type="text" class="form-control" ng-model="obj.bub_cd"></td>
+-->
         <td><input type="text" class="form-control" ng-model="obj.bank_cd"></td>
+        <!--
         <td><input type="text" class="form-control" ng-model="obj.account"></td>
+      -->
         <td><input type="text" class="form-control" ng-model="obj.name"></td>
         <td><input type="text" class="form-control" ng-model="obj.amt"></td>
         <td><input type="text" class="form-control" ng-model="obj.kubun"></td>
+        <!--
         <td><input type="text" class="form-control" ng-model="obj.real_date"></td>
+
 
         
         <td><button type="button" class="btn btn-warning"
          ng-click="modifyUserInfo(obj.id, obj.bub_cd, obj.name, obj.amt, obj.kubun)">수정</button></td>
         <td><button type="button" class="btn btn-danger btn-sm" 
           ng-click="deleteUserInfo(obj.id)">삭제</button></td>
+           -->
       </tr>
     </tbody>
   </table>
@@ -44,28 +63,28 @@
 <!--    
        <tr><td>은행코드</td><td>{{userInfo.bank_cd}}</td></tr>
 -->
-       <tr><td>은행코드</td><td>
+       <tr><td>인터넷뱅킹</td><td>
         <div ng-show="userInfo.bank_cd == '088'">
-          <a href="http://www.shinhan.com/" target="_blank" onclick="return popupwindow(this.href, 600, 800)">신한은행 인터넷뱅킹 바로가기</a></div>
+          <a href="http://www.shinhan.com/" target="_blank" onclick="return popupwindow(this.href, 600, 800)">신한은행 바로가기</a></div>
           <div ng-show="userInfo.bank_cd == '011'">
-          <a href="https://banking.nonghyup.com" target="_blank" onclick="return popupwindow(this.href, 600, 800)">NH농협 인터넷뱅킹 바로가기</a></div>
+          <a href="https://banking.nonghyup.com" target="_blank" onclick="return popupwindow(this.href, 600, 800)">NH농협 바로가기</a></div>
           <div ng-show="userInfo.bank_cd == '020'">
-          <a href="http://www.wooribank.com/" target="_blank" onclick="return popupwindow(this.href, 600, 800)">우리은행 인터넷뱅킹 바로가기</a>
+          <a href="http://www.wooribank.com/" target="_blank" onclick="return popupwindow(this.href, 600, 800)">우리은행 바로가기</a>
           </div>
           <div ng-show="userInfo.bank_cd == '023'">
-          <a href="https://www.standardchartered.co.kr/" target="_blank" onclick="return popupwindow(this.href, 600, 800)">SC은행 인터넷뱅킹 바로가기</a></div>
+          <a href="https://www.standardchartered.co.kr/" target="_blank" onclick="return popupwindow(this.href, 600, 800)">SC은행 바로가기</a></div>
           <div ng-show="userInfo.bank_cd == '031'">
-          <a href="https:https://www.dgb.co.kr/" target="_blank" onclick="return popupwindow(this.href, 600, 800)">대구은행 인터넷뱅킹 바로가기</a></div>
+          <a href="https://www.dgb.co.kr/" target="_blank" onclick="return popupwindow(this.href, 600, 800)">대구은행 바로가기</a></div>
           <div ng-show="userInfo.bank_cd == '032'">
-          <a href="https://www.busanbank.co.kr" target="_blank" onclick="return popupwindow(this.href, 600, 800)">부산은행 인터넷뱅킹 바로가기</a></div>
+          <a href="https://www.busanbank.co.kr" target="_blank" onclick="return popupwindow(this.href, 600, 800)">부산은행 바로가기</a></div>
           <div ng-show="userInfo.bank_cd == '034'">
-          <a href="https://www.busanbank.co.kr" target="_blank" onclick="return popupwindow(this.href, 600, 800)">광주은행 인터넷뱅킹 바로가기</a></div>
+          <a href="https://www.busanbank.co.kr" target="_blank" onclick="return popupwindow(this.href, 600, 800)">광주은행 바로가기</a></div>
           <div ng-show="userInfo.bank_cd == '037'">
-          <a href="https://www.jbbank.co.kr/" target="_blank" onclick="return popupwindow(this.href, 600, 800)">전북은행 인터넷뱅킹 바로가기</a></div>
+          <a href="https://www.jbbank.co.kr/" target="_blank" onclick="return popupwindow(this.href, 600, 800)">전북은행 바로가기</a></div>
           <div ng-show="userInfo.bank_cd == '039'">
-          <a href="https://www.knbank.co.kr/" target="_blank" onclick="return popupwindow(this.href, 600, 800)">경남은행 인터넷뱅킹 바로가기</a></div>
+          <a href="https://www.knbank.co.kr/" target="_blank" onclick="return popupwindow(this.href, 600, 800)">경남은행 바로가기</a></div>
           <div ng-show="userInfo.bank_cd == '081'">
-          <a href="https://www.kebhana.com/" target="_blank" onclick="return popupwindow(this.href, 600, 800)">KEB하나은행 인터넷뱅킹 바로가기</a></div>
+          <a href="https://www.kebhana.com/" target="_blank" onclick="return popupwindow(this.href, 600, 800)">KEB하나은행 바로가기</a></div>
           <div ng-show="userInfo.bank_cd == NULL">
           <a href="http://www.naver.com/" target="_blank" onclick="return popupwindow(this.href, 600, 800)">은행검색</a>
           </div>

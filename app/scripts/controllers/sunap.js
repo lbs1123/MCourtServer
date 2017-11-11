@@ -23,7 +23,7 @@ angular.module('angularJsexamApp')
     $scope.userList = [];
     $scope.requestUserList = function() {
         var dataPromise = Data.getData(
-            'http://192.168.35.178:52273/sunap');
+            'http://172.16.2.1:52273/sunap');
         dataPromise.then(function(results) {
             $scope.userList = results.data;
             for (var i = 0; i < $scope.userList.length; i++) {
@@ -41,7 +41,7 @@ angular.module('angularJsexamApp')
 
     $scope.deleteUserInfo = function(id) {
         var dataPromise = Data.deleteData(
-            'http://192.168.35.178:52273/sunap/'+id, '');
+            'http://172.16.2.1:52273/sunap/'+id, '');
         dataPromise.then(function(results) {
             $scope.requestUserList();
         }, function(reason){},function(update){});
@@ -49,7 +49,7 @@ angular.module('angularJsexamApp')
 
     $scope.modifyUserInfo = function(id, bub_cd, name, amt, kubun) {
         var dataPromise = Data.modifyData(
-            'http://192.168.35.178:52273/johoi/'+id, '&bub_cd='+bub_cd+
+            'http://172.16.2.1:52273/johoi/'+id, '&bub_cd='+bub_cd+
                                                        '&name='+name+
                                                        '&amt='+amt+
                                                        '&kubun='+kubun);
@@ -61,7 +61,7 @@ angular.module('angularJsexamApp')
     $scope.userInfo = {};
     $scope.getUserInfo = function(id) {
         var dataPromise = Data.getData(
-            'http://192.168.35.178:52273/sunap/'+id);
+            'http://172.16.2.1:52273/sunap/'+id);
         dataPromise.then(function(results) {
             $scope.userInfo = results.data;
         }, function(reason){},function(update){});
@@ -70,7 +70,7 @@ angular.module('angularJsexamApp')
    $scope.userInfo = {};
     $scope.getUserInfo = function(napbu_no) {
         var dataPromise = Data.getData(
-            'http://192.168.35.178:52273/sunap/'+napbu_no);
+            'http://172.16.2.1:52273/sunap/'+napbu_no);
         dataPromise.then(function(results) {
             $scope.userInfo = results.data;
             var sunap_date = new Date($scope.userInfo.sunap_date);

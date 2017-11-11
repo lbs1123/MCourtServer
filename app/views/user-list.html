@@ -4,20 +4,24 @@
 <div class="row">
   <div class="col-sm-12">
   <table class="table">
-    <thead><tr><th>id</th><th>전자소송ID</th><th>회원ID</th><th>성  명</th><th>비밀번호</th><th>수정</th><th>삭제</th></tr></thead>
-    <tbody>
+    <thead><tr><th>id</th><th>전자소송ID</th><th>회원ID</th><th>성  명</th><th>
+    <!-- 화면축소
+    비밀번호</th><th>수정</th><th>삭제</th></tr>
+  -->
+    </thead><tbody>
       <tr ng-repeat="obj in userList">
         <td><a href="detail:{{obj.id}}&{{obj.name}}&{{obj.age}}"><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" ng-click="getUserInfo(obj.id)">{{obj.id}}</button></a></td>
         <td><input type="text" class="form-control" ng-model="obj.scourt_id"></td>
         <td><input type="text" class="form-control" ng-model="obj.user_id"></td>
         <td><input type="text" class="form-control" ng-model="obj.name"></td>
+        <!-- 화면축소
         <td><input type="text" class="form-control" ng-model="obj.password"></td>
-
-        
+    
         <td><button type="button" class="btn btn-warning"
          ng-click="modifyUserInfo(obj.id, obj.scourt_id, obj.user_id, obj.name, obj.password)">수정</button></td>
         <td><button type="button" class="btn btn-danger btn-sm" 
           ng-click="deleteUserInfo(obj.id)">삭제</button></td>
+        -->
       </tr>
     </tbody>
   </table>
@@ -30,7 +34,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">User Info</h4>
+        <h4 class="modal-title">회원정보 상세조회</h4>
       </div>
 
       <div class="modal-body">

@@ -13,7 +13,7 @@ angular.module('angularJsexamApp')
     // AngularJS will instantiate a singleton by calling "new" on this function
     this.login = function(params, callback) {
     	var dataPromise = Data.setData(
-    		'http://192.168.35.178:52273/user/login',
+    		'http://172.16.2.1:52273/user/login',
     		//'http://10.0.2.2:52273/user/login',
     		'&user_id='+params.user_id+"&password="+params.password);
     	dataPromise.then(function(result) {
